@@ -11,7 +11,7 @@ ENV PYTHONUNBUFFERED 1
 
 VOLUME ["/project"]
 
-WORKDIR /code
+WORKDIR /project
 
 COPY project/requirements.txt /project/
 

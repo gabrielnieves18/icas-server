@@ -23,7 +23,7 @@ sudo docker build . -t django:1.11.0
 ```
 
 ```
-To satrt the server run the following code:
+To start the server run the following code:
 	docker run -it --rm -v $(pwd)/project:/project django:1.11.0 python manage.py runserver
 ```
 

@@ -18,14 +18,14 @@ To-Do
 
 ### Build django image  ###
 
-'''
+```
 sudo docker build . -t django:1.11.0
-'''
+```
 
-'''
+```
 To satrt the server run the following code:
 	docker run -it --rm -v $(pwd)/project:/project django:1.11.0 python manage.py runserver
-'''
+```
 
 ### Who do I talk to? ###
 

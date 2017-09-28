@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.4.7
 
 # Set multiple labels at once, using line-continuation characters to break long lines
 LABEL vendor=ICAS\ Incorporated \

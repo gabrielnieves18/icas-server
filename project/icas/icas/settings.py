@@ -22,10 +22,21 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'lrmmntn8y1wy$)dyc=37*$ab@7jg-_n$#a_b82v2@+c_2tq)b&'
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+DOMAIN = "creativecaco.com"
+FQDN = "www.{}".format(DOMAIN)
+
+ALLOWED_HOSTS = [
+    DOMAIN,
+    FQDN,
+]
 
 
 # Application definition

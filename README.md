@@ -1,10 +1,6 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+To-Do
 
 ## Configuration ##
 
@@ -29,4 +25,4 @@ To start the server run the following code:
 
 ### Who do I talk to? ###
 
-* Gabriel Nieves Ponce: nieves1@umbc.edu
+* Gabriel Nieves Ponce: gabrielnieves18@gmail.com

@@ -35,6 +35,7 @@ FQDN = "www.{}".format(DOMAIN)
 ALLOWED_HOSTS = [
     DOMAIN,
     FQDN,
+    "35.226.194.237", 
 ]
 
 

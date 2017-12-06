@@ -6,10 +6,6 @@ class ImageViewSet(viewsets.ModelViewSet):
     serializer_class = ImageSerializer
 
     def get_queryset(self):
-        """
-        This view should return a list of all the purchases
-        for the currently authenticated user.
-        """
-        return Image.objects.all()
+        return Image.objects.all().order_by('created')
 
 

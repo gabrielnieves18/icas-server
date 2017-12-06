@@ -4,7 +4,7 @@ from images.models import Image
 
 class ImageSerializer(serializers.ModelSerializer):
 
-    image = serializers.ImageField(max_lenght=None, use_url=True)
+    image = serializers.ImageField(max_length=None, use_url=True)
 
     class Meta:
         model = Image

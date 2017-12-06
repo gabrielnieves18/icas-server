@@ -4,7 +4,7 @@ from images.models import Image
 
 class SnippetSerializer(serializers.ModelSerializer):
 
-    image = serializers.ImageField(max_lenght=None, use_url=true)
+    image = serializers.ImageField(max_lenght=None, use_url=True)
 
     class Meta:
         model = Image

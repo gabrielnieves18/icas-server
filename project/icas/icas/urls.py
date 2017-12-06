@@ -18,32 +18,34 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
 
-# Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'is_staff')
+from snippets.views import SnippetViewSet, UserViewSet
+from images.views import ImageViewSet, S3ViewSet
 
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+from rest_framework.routers import DefaultRouter
 
-# Routers provide an easy way of automatically determining the URL conf.
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
 
 # Retrive the URL for the /icas/{media, static} directories
 staticurl = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 mediaurl = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+# Routers provide an easy way of automatically determining the URL conf.
+router = DefaultRouter()
+router.register(r'images', ImageViewSet, base_name='images')
+#router.register(r's3', S3ViewSet, base_name='s3')
+#router.register(r'snippets', SnippetViewSet, base_name='snippet')
+router.register(r'users', UserViewSet, base_name='user')
+
+urlpatterns = [
+    url(r'^api/wadl/', include(router.urls)),
+    url(r'^admin/', admin.site.urls, name='admin'),
+]
+
+# Add /icas/{media, static} directories URL
+urlpatterns += (staticurl + mediaurl)
+
 # Wire up our API using automatic URL routing.
 # Additionally, we Django-REST includes login URLs for the browsable API.
-urlpatterns = [
-    url(r'^', include(router.urls)),
-    # url(r'^/', views.home, name='home'),
-    url(r'^admin/', admin.site.urls, name='admin'),
+urlpatterns += [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-] + staticurl + mediaurl
+]

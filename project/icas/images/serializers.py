@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from images.models import Image
 
-from models import Model
+from model import Model
 
 
 class ImageSerializer(serializers.ModelSerializer):

@@ -8,12 +8,12 @@ class ImageSerializer(serializers.ModelSerializer):
 
     image = serializers.ImageField(max_length=None, use_url=True)
 	
-	model = Model(image_uri=image)
+    model = Model(image_uri=image)
 	
-	objects = model.inferense()
-	
-	print(objects)
-	
+    objects = model.inferense()
+    
+    print(objects)
+    	
     class Meta:
         model = Image
         fields = ('id',

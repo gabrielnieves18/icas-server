@@ -2,7 +2,7 @@ from rest_framework import serializers
 from images.models import Image
 
 
-class SnippetSerializer(serializers.ModelSerializer):
+class ImageSerializer(serializers.ModelSerializer):
 
     image = serializers.ImageField(max_lenght=None, use_url=True)
 

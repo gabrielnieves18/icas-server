@@ -31,7 +31,7 @@ mediaurl = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = DefaultRouter()
-router.register(r'images', ImageViewSet, base_name='images')
+router.register(r'images', ImageViewSet, base_name='image')
 #router.register(r's3', S3ViewSet, base_name='s3')
 #router.register(r'snippets', SnippetViewSet, base_name='snippet')
 router.register(r'users', UserViewSet, base_name='user')

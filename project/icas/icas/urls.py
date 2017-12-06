@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 
 from snippets.views import SnippetViewSet, UserViewSet
-#from images.views import ImageViewSet, S3ViewSet
+from images.views import ImageViewSet
 
 from rest_framework.routers import DefaultRouter
 
@@ -31,7 +31,7 @@ mediaurl = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = DefaultRouter()
-#router.register(r'images', ImageViewSet, base_name='images')
+router.register(r'images', ImageViewSet, base_name='images')
 #router.register(r's3', S3ViewSet, base_name='s3')
 #router.register(r'snippets', SnippetViewSet, base_name='snippet')
 router.register(r'users', UserViewSet, base_name='user')

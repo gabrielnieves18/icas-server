@@ -52,15 +52,6 @@ RUN apt-get install nginx -y
 # Copy the icas nginx configuration
 COPY $ICAS_NGINX_CONFIG /etc/nginx/sites-enabled/
 
-# Install Dependencies for Certbo. An 
-# Open source client hat fetches and 
-# deploys SSL/TLS certificates in order
-# to enable HTTPS connection to our site
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository -y ppa:certbot/certbot && apt-get update
-# Run this manually with answers 2 and 105: 
-# RUN apt-get install -y python-certbot-nginx 
-
 # Enable interactive before exiting
 ENV DEBIAN_FRONTEND teletype
 

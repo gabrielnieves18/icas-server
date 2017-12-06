@@ -13,7 +13,6 @@ class ImageViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
     
         uri = serializer.validated_data['image']
-        serializer.validated_data['password'] = hashed_password 
         image = super(ImageViewSet, self).perform_create(serializer) # create a user
         
         print('\n\nThe image = {}\n\n'.format(uri))

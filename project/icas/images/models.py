@@ -6,4 +6,4 @@ class Image(models.Model):
     image = models.ImageField(upload_to='media', default='media/out/out.jpg')
     
     class Meta:
-        ordering = ('created',)
+        ordering = ('id',)

@@ -8,9 +8,9 @@ class ImageSerializer(serializers.ModelSerializer):
 
     image = serializers.ImageField(max_length=None, use_url=True)
 	
-    model = Model(image_uri=image)
+    m = Model(image_uri=image)
 	
-    objects = model.inferense()
+    objects = m.inferense()
     
     print(objects)
     	
